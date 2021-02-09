@@ -21,8 +21,8 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-0 13 * * * /home/pi/cronBell/ringone.py
-0 14 * * * /home/pi/cronBell/ringtwo.py
-0 15 * * * /home/pi/cronBell/ringthree.py
-0 0 1 1 * /home/pi/cronBell/ringtwelve.py
+0 13 * * * "/home/pi/cronBell/ring_n.py 1"
+0 14 * * * "/home/pi/cronBell/ring_n.py 2"
+0 15 * * * "/home/pi/cronBell/ring_n.py 3"
+0 0 1 1 * "/home/pi/cronBell/ring_n.py 12"
 
