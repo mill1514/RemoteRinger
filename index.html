@@ -10,8 +10,8 @@
 		}
 
 		#main {
-			background: rgba(0, 0, 0, 0.2);
-			padding-top: 30px;
+			background: rgba(0, 0, 0, 0);
+			padding-top: 20px;
 		}
 
 		.center {
@@ -26,23 +26,6 @@
 			font-size: 32px;
 
 		}
-
-		#spacer {
-			padding: 140px 0px;
-		}
-
-		#footer {
-			background: rgba(0, 0, 0, 0.3);
- 		}
-
-		.fcenter {
-			text-align: center;
-			width: 75%;
-			color: white;
-			
-		}
-		</style>
-		<style>
 		.dropbtn {
 		  background: rgba(0, 0, 0, 0);
 		  color: white;
@@ -83,7 +66,23 @@
 		.dropdown a:hover {background-color: #ddd;}
 
 		.show {display: block;}
+		
+		#spacer {
+			padding: 90px 0px;
+		}
+
+		#footer {
+			background: rgba(0, 0, 0, 0.5);
+ 		}
+
+		.fcenter {
+			text-align: center;
+			width: 75%;
+			color: white;
+			
+		}
 		</style>
+
 		<script>
 			// This function is called to send a POST request 
 			// in order to tell the server to ring the bell
@@ -119,12 +118,12 @@
 				'CAMPANOLOGY - The study of bells. It encompasses the technology of bells, how they are cast, tuned, rung, and sounded as well as the history, methods, and traditions of bell ringing as an art.',
 				'PEAL - In campanology (bell ringing), a peal is the special name given to a specific type of performance of change ringing which meets certain exacting conditions for duration, complexity and quality.',
 				'RING MY BELL - is a 1979 disco song sung by Anita Ward. The song was originally written for then eleven-year-old Stacy Lattisaw, as a teenybopper song about kids talking on the telephone. When Lattisaw signed with a different label, Anita Ward was asked to sing it instead, and it became her only major hit.',
-				'BELL BOTTOM JEANS - Bell-bottoms (or flares) are a style of trousers that become wider from the knees downward, forming a bell-like shape of the trouser leg.',
+				'BELL BOTTOM JEANS - Bell-bottoms (or flares) are a style of pants that become wider from the knees downward, forming a bell-like shape of the pant leg. Big in the 60s and 70s',
 				'NYSE OPENING/CLOSING BELL  -  One of the most familiar images of the NYSE on the evening news is the loud ringing of a bell, signaling the opening or closing of the day’s trading. Trading floor bells are more than just a colorful tradition. They are critical to the orderly functioning of the marketplace, assuring that no trades take place before the opening or after the close.',
 				'BELL - character from the anime series  "Is It Wrong to Try to Pick Up Girls in a Dungeon?" based on the light novel series created by Fujino Ōmori. The story follows the exploits of Bell Cranel, a 14-year-old solo adventurer under the goddess Hestia.',
 				'BELLS BEER - Michigan based brewer of Inspired Beers. Bells brews acclaimed beers such as Hopslam Ale, Oberon Ale, and Two Hearted Ale. It operates a brewpub and a store selling merchandise and homebrewing supplies at its Kalamazoo location. Begun as a homebrewing store in 1983, and producing beer since 1985, it is the oldest existing craft brewery in Michigan',
 				'UNRING THE BELL - In law, unring the bell is an analogy used to suggest the difficulty of forgetting information once it is known. When discussing jury trials, the phrase is sometimes used to describe the judges instructions to the jury to ignore inadmissible evidence or statements they have heard.',
-				'GET YOUR BELL RUNG - To receive a violent blow or injury, especially to the head and as might stun, concuss, or incapacitate.',
+				'GET YOUR BELL RUNG - To receive a violent blow or injury, especially to the head and as such, might stun, concuss, or incapacitate.',
 				'JINGLE BELLS - one of the best-known and commonly sung American songs in the world. It was written by James Lord Pierpont and published under the title "The One Horse Open Sleigh" in the autumn of 1857. Although it has no original connection to Christmas, it became associated with Christmas music and the holiday season in the 1860s. It was first recorded in 1889 on an Edison cylinder; this recording, believed to be the first Christmas record, is lost, but an 1898 recording also from Edison Records survives.',
 				'JINGLE BELL ROCK - is an American popular Christmas song first released by Bobby Helms in 1957. It has received frequent airplay in the United States during every Christmas season since then.',
 				'SAVED BY THE BELL - an American television sitcom on NBC. It was broadcast from August 20, 1989 to May 22, 1993. The series starred Mark-Paul Gosselaar, Dustin Diamond, Lark Voorhies, Dennis Haskins, Tiffani-Amber Thiessen, Elizabeth Berkley, and Mario Lopez. Targeted at kids and teens, Saved by the Bell was broadcast in the United States on Saturday mornings.',
@@ -145,8 +144,8 @@
 				'THE JUSTICE BELL (The Womens Liberty Bell) is a replica of the Liberty Bell made in 1915. It was created to promote the cause for womens suffrage in the United States from 1915 to 1920. The bell is on permanent display at the Washington Memorial Chapel in Valley Forge National Park in Pennsylvania.',
 				'BIG BEN - Big Ben is the nickname for the Great Bell of the striking clock at the north end of the Palace of Westminster; the name is frequently extended to refer to both the clock and the clock tower. The official name of the tower in which Big Ben is located was originally the Clock Tower; it was renamed Elizabeth Tower in 2012 to mark the Diamond Jubilee of Elizabeth II, Queen of the United Kingdom.',
 				'CALL BELL - A call bell is used in hotels or other such facilities where people need to call attention to the person in charge to check them in, take their bags, of for any other reasons.',
-				'Kristen Bell - is an American actress, singer, and producer.',
-				'Alexander Graham Bell - Inventor.'					
+				'Kristen Bell - Kristen Anne Bell is an American actress, singer, and producer. She began her professional acting career by starring in stage productions while attending the Tisch School of the Arts at New York University. Born:Kristen Anne Bell, July 18, 1980, Huntington Woods, Michigan, U.S..',
+				'Alexander Graham Bell - A Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone. He also co-founded the American Telephone and Telegraph Company in 1885.'					
 			]
 	
 			function getRandomTrivia() {
@@ -206,12 +205,11 @@
 		
 		</div> 
 		
-				
+		<center>
+		<h1 style="color:white;font-size:36">BELL TRIVIA</h1>
+		</center>		
+			
 		<div class="fcenter" id="footer">
-		
-			<center>
-			<h1>BELL TRIVIA</h1>
-			</center>
 			<p id="triviaDisplay" style="font-size:140%">
 			<!-- Quotes will display here -->
 			</p>

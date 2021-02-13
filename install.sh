@@ -14,5 +14,5 @@ sudo cp $BELLRINGER_SERVICE_FILE $SYSTEMD_PATH
 sudo systemctl enable $BELLRINGER_SERVICE_FILE
 sudo systemctl start $BELLRINGER_SERVICE_FILE
 
-# Overwrites everything else in crontab...
-crontab cron.txt
+# Overwrites everything else in system crontab...
+sudo cp crontab.txt /etc/crontab
