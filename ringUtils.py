@@ -6,10 +6,13 @@ import threading
 import datetime
 import logging
 
-BUTTON = 4
-BELL_RELAY = 27                         
-RING_TRIGGER_LENGTH = .050
-RING_COOLDOWN_LENGTH = 5
+BUTTON = 4                   # Hardware button connected to GPIO pin as input.
+BELL_RELAY = 27              # Relay connected to GPIO pin used for applying power to solenoid that pulls bell clapper           
+RING_TRIGGER_LENGTH = .050   # Time needed to ring bell cleanly (not overdrive solenoid)
+RING_COOLDOWN_LENGTH = 4     # Time delay between when rings will be permitted
+TIME_GUARD = "ON"            # Guard to prevent bell from ringing too early or late
+TIME_GUARD_START = 10        # Earliest hour bell can ring with Time Guard on 
+TIME_GUARD_END = 17          # Latest hour bell can ring with Time guard on(24 hr format)
 
 last_ring_time = time.time()
 
@@ -26,14 +29,20 @@ def initialize():
      GPIO.setup(BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
 
      # Detect Button pushes and then do callback to ring function
-     GPIO.add_event_detect(BUTTON, GPIO.FALLING, callback=button_callback)
+     GPIO.add_event_detect(BUTTON, GPIO.RISING, callback=button_callback, bouncetime=200)
 
 def button_callback(channel):
     logging.info('Button on Bell-Ringer box pressed at    ')
+
     print("Button pressed!")
     ringOnce()
 
 def ringOnce():
+     currentHour = int(time.strftime("%H"))   # get current hour as an integer
+     if TIME_GUARD == "ON" and currentHour not in range(TIME_GUARD_START, TIME_GUARD_END):  
+          logging.info('Ring requested but outside of allowed hours    ')
+          print("RING BLOCKED, Outside of allowed time period")
+          return False
 
      global last_ring_time
 
