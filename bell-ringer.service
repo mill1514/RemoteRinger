@@ -5,7 +5,7 @@ Description=Ring the bell
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=sudo /usr/local/bell-ringer/bellserver.py &> /tmp/bell_log.log 
+ExecStart=sudo /usr/local/bell-ringer/bellserver.py  
 
 [Install]
 WantedBy=multi-user.target
