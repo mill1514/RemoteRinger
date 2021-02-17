@@ -8,7 +8,7 @@ import sys
 BELL_RELAY = 27                         
 RING_TRIGGER_LENGTH = .050
 RING_DELAY = 2.5
-logging.basicConfig(filename='/usr/local/bell-ringer/bell_cron.log', format=' %(message)s %(asctime)s', datefmt='%I:%M:%S %p %m/%d/%Y', level=logging.DEBUG)
+logging.basicConfig(filename='/var/log/bell_cron.log', format=' %(message)s %(asctime)s', datefmt='%I:%M:%S %p %m/%d/%Y', level=logging.DEBUG)
 
 def main():
     if len(sys.argv) < 2:  # Catch occurences of no argument provided
