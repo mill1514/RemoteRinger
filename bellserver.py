@@ -9,6 +9,9 @@ homepagePath = "/usr/local/bell-ringer/index.html"
 hostName = "192.168.1.150"
 serverPort = 80
 logging.basicConfig(filename='/var/log/bell.log', format=' %(message)s %(asctime)s', datefmt='%I:%M:%S %p %m/%d/%Y', level=logging.DEBUG)
+TIME_GUARD = "ON"          # Guard to prevent bell from ringing too early or late,( need to address New Years Eve?)
+TIME_GUARD_START = 10        # Earliest hour the bell can ring when Time Guard is on 
+TIME_GUARD_END = 16          # Latest hour the bell can ring when time guard is on (24 hr format)(will ring up to 59 past hour, i.e. 1759)
 
 class BellServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -32,7 +35,11 @@ class BellServer(BaseHTTPRequestHandler):
         self.wfile.write(content)
 
     def handleRingBellRequest(self):
-        if ringUtils.ringOnce():
+        currentHour = int(time.strftime("%H"))   # get current hour as an integer
+        if TIME_GUARD == "ON" and currentHour not in range(TIME_GUARD_START, TIME_GUARD_END):  
+            logging.info('Ring requested but outside of allowed hours    ')
+            self.send_response(403)
+        elif ringUtils.ringOnce():
             logging.info('    Bell went BONG to honor Web Request ')
             self.send_response(200)
         else:

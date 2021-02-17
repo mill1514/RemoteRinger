@@ -97,13 +97,19 @@
 
 					// Upon receiving 200 from server, notify user that bell has been rung
 					if (this.readyState == 4 && this.status == 200) {
-						var newNotifs = "</br>Bell went BONG";
+						var newNotifs = "</br>Bell went BONG    ";
 						document.getElementById("bellnotifs").innerHTML = newNotifs + currentNotifs;
 					} 
 
 					// Upon receiving 428 from server, notify user that bell has not been rung
 					if (this.readyState == 4 && this.status == 429) {
-						var newNotifs = "</br>Bell be BONGING, easy Brah!";
+						var newNotifs = "</br>Bell be BONGING, ez Brah!";
+						document.getElementById("bellnotifs").innerHTML = newNotifs + currentNotifs;
+					}
+
+					// Upon receiving 403 from server, notify user that bell has not been rung from time guard
+					if (this.readyState == 4 && this.status == 403) {
+						var newNotifs = "</br>Not in Allowed Time Range";
 						document.getElementById("bellnotifs").innerHTML = newNotifs + currentNotifs;
 					}
 
@@ -191,7 +197,7 @@
 			<button class="dropbtn" type="button" onclick="sendRingRequest()">RING THAT BELL</button>
 
 			<div class="dropdown">
-			<button onclick="myFunction()" class="dropbtn">SCHEDULER</button>
+			<button onclick="myFunction()" class="dropbtn">SCHEDULED</button>
 			<div id="myDropdown" class="dropdown-content">
 				<a href="#home">1 @ 1PM Everyday</a>
 				<a href="#about">2 @ 2PM Everyday</a>
