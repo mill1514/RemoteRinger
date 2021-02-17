@@ -22,6 +22,5 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #
 0 13 * * * root /usr/local/bell-ringer/ring_n.py 1
 0 14 * * * root /usr/local/bell-ringer/ring_n.py 2
-0 15 * * * root /usr/local/bell-ringer/ring_n.py 3
-0 0 1 1 * root /usr/local/bell-ringer/ring_n.py 12
+0 0 1 1 * root /usr/local/bell-ringer/ring_n.py 5
 
